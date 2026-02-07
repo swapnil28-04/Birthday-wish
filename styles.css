@@ -1,0 +1,141 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Nunito',sans-serif;
+  min-height:100vh;
+  background:linear-gradient(135deg,#ffb703,#fb8500);
+  overflow:hidden;
+  color:#fff;
+}
+
+.screen{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  transition:1s ease;
+}
+
+.hidden{
+  opacity:0;
+  pointer-events:none;
+  transform:scale(1.05);
+}
+
+.card{
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(14px);
+  padding:32px;
+  border-radius:28px;
+  max-width:420px;
+  text-align:center;
+  box-shadow:0 30px 60px rgba(0,0,0,.4);
+}
+
+h1{
+  font-family:'Pacifico',cursive;
+  font-size:2.4rem;
+  margin-bottom:12px;
+}
+
+.subtitle{opacity:.85;margin-bottom:20px;}
+
+button{
+  padding:14px 30px;
+  border:none;
+  border-radius:999px;
+  background:#ff006e;
+  color:#fff;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.message{
+  line-height:1.6;
+  margin-bottom:18px;
+}
+
+.date{
+  display:inline-block;
+  margin:8px 0;
+  padding:6px 14px;
+  border-radius:999px;
+  background:#ff006e;
+  animation:pulse 1.4s infinite;
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.08);}
+}
+
+/* 🖼️ Slideshow */
+.slideshow{
+  width:100%;
+  height:180px;
+  margin:16px 0;
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+}
+
+.slide{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1s ease;
+}
+
+.slide.active{opacity:1;}
+
+.from{margin-top:16px;opacity:.9;}
+
+/* 🎂 Final Cake */
+#final-cake{
+  position:fixed;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:200px;
+  opacity:0;
+  transform:scale(.2);
+  transition:1.5s ease;
+  pointer-events:none;
+  z-index:999;
+}
+
+#final-cake.show{
+  opacity:1;
+  transform:scale(1);
+}
+
+/* 🎈 Balloons */
+.balloon{
+  position:fixed;
+  bottom:-60px;
+  font-size:32px;
+  animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+  to{transform:translateY(-120vh);opacity:0;}
+}
+
+/* 🎊 Confetti */
+.confetti{
+  position:fixed;
+  width:8px;
+  height:8px;
+  background:red;
+  top:0;
+  animation:fall 3s linear forwards;
+}
+
+@keyframes fall{
+  to{transform:translateY(120vh) rotate(720deg);opacity:0;}
+}
